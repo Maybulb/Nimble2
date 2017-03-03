@@ -16,6 +16,7 @@ body {
   width: 100%;
   margin: 0;
   overflow-x: hidden;
+  font-family: system, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Lucida Grande';
 }
 
 input {
@@ -51,6 +52,11 @@ button:focus {
   outline: none;
 }
 
+a {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .animate-loader {
   animation: loader 0.75s ease-in-out infinite alternate;
   transform-origin: center;
@@ -60,6 +66,8 @@ button:focus {
   from { transform: rotate(0deg) }
   to { transform: rotate(360deg) }
 }
+
+/* SearchButton */
 
 .SearchButton {
   position: relative;
@@ -94,6 +102,8 @@ button:focus {
   transform: translateY(30px);
 }
 
+/* Search */
+
 .Search {
   position: relative;
   padding-right: 48px;
@@ -105,11 +115,15 @@ button:focus {
   right: 16px;
 }
 
+/* Interpretation */
+
 .Interpretation {
   padding: 6px 16px;
   color: #fff;
   font-size: 14px;
 }
+
+/* Pods */
 
 .Pods {
   overflow: hidden;
@@ -117,6 +131,8 @@ button:focus {
   overflow-y: scroll;
   max-height: 380px;
 }
+
+/* Pod */
 
 .Pod {
   margin-top: 16px;
@@ -131,4 +147,38 @@ button:focus {
 .Pod img {
   user-select: none;
   background-color: #f2f2f2;
+}
+
+/* Error */
+
+.Error {
+  padding: 30px 0;
+  text-align: center;
+}
+
+.Error__icon {
+  font-size: 70px;
+  margin-bottom: 20px;
+}
+
+.Error p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+/* Credits */
+
+.Credits {
+  font-size: 14px;
+  text-align: right;
+  color: rgba(255, 255, 255, .8);
+  line-height: 30px;
+}
+
+.Credits svg {
+  float: right;
+  width: 109px;
+  height: 18px;
+  opacity: .8;
+  margin: 6px 16px 6px 6px;
 }

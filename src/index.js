@@ -4,8 +4,8 @@ import './index.css';
 
 import Search from './components/Search';
 import Theme from './components/Theme';
-import Request from './components/WolframAlphaRequest';
-import Results from './components/WolframAlphaResults';
+import Request from './components/Request';
+import Results from './components/Results';
 import resize from './util/resize';
 
 class App extends Component {
@@ -17,12 +17,11 @@ class App extends Component {
   search = query => {
     this.setState({ query });
   }
-  startSearch = () => {
-    this.setState({ loading: true });
-  }
-  finishSearch = () => {
-    this.setState({ loading: false });
-    setTimeout(resize);
+  handleSearch = loading => {
+    return () => {
+      this.setState({ loading });
+      setTimeout(resize);
+    };
   }
   render() {
     return (
@@ -37,10 +36,13 @@ class App extends Component {
         <Request
           token={process.env.REACT_APP_WOLFRAM_ALPHA_API_KEY}
           query={this.state.query}
-          onRequest={this.startSearch}
-          onResult={this.finishSearch}
+          onRequest={this.handleSearch(true)}
+          onResult={this.handleSearch(false)}
           render={results => (
-            <Results pods={results.pods} />
+            <Results
+              query={this.state.query}
+              {...results}
+            />
           )}
         />
       </div>

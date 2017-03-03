@@ -11,10 +11,10 @@ function SearchButton({ loading, disabled, onClick }) {
       onClick={onClick}
     >
       <span className={classname('search', !loading && 'active')}>
-        <i className="fa fa-search" />
+        <i className="fa fa-search" aria-hidden />
       </span>
       <span className={classname('refresh', loading && 'active')}>
-        <i className="fa fa-refresh animate-loader" />
+        <i className="fa fa-refresh animate-loader" aria-hidden />
       </span>
     </button>
   );

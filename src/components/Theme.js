@@ -13,6 +13,7 @@ function Theme({ color }) {
       .highlight {
         background-color: ${highlight};
       }
+      a,
       .primary-color {
         color: ${primary};
       }

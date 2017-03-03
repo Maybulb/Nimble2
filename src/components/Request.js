@@ -4,9 +4,10 @@ import require from '../util/require';
 const fetch = require('node-fetch');
 const { stringify } = require('querystring');
 
-class WolframAlphaRequest extends Component {
+class Request extends Component {
   state = {
     result: null,
+    pending: false,
   };
   componentWillMount() {
     if (this.props.query) {
@@ -35,46 +36,45 @@ class WolframAlphaRequest extends Component {
   }
   startRequest(props) {
     const { onRequest, onResult } = this.props;
-    const request = this.request(props).then(result => {
-      console.debug(result);
-      this.setState({ result });
-      onResult && onResult(result);
-    });
+    const request = this.request(props)
+      .then(result => {
+        console.debug(result);
+        this.setState({ result });
+        onResult && onResult(result);
+      })
+      .catch()
+      .then(() => {
+        this.setState({ pending: false });
+      });
     onRequest && onRequest(request);
+    this.setState({ pending: true });
   }
   render() {
-    if (this.state.result) {
-      return this.props.render(this.state.result);
+    const { pending, result } = this.state;
+    if (!pending && result) {
+      return this.props.render(result);
     }
     return null;
   }
 }
 
-WolframAlphaRequest.defaultProps = {
+Request.defaultProps = {
   scale: 2,
   width: 800,
 };
 
 /*
 
-<WolframAlphaRequest
+<Request
   key=""
   query="Hello World"
-  onSuccess={() => (
-    <pre>
-      {JSON.stringify(response, null, '  ')}
-    </pre>
-  )}
-  onError={err => {
-    <div>
-      Couldn't find anything for "Hello World".
-    </div>
-  }}
-  render={response => (
+  onRequest={() => {}}
+  onResult={() => {}}
+  render={result => (
 
   )}
 />
 
 */
 
-export default WolframAlphaRequest;
+export default Request;

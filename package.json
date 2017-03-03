@@ -8,6 +8,7 @@
     "color": "^1.0.3",
     "electron": "^1.4.15",
     "font-awesome": "^4.7.0",
+    "jacobmarshall-react-inline-svg": "^2.0.1",
     "menubar": "^5.2.3",
     "node-fetch": "^1.6.3",
     "normalize.css": "^5.0.0",

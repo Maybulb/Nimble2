@@ -2907,6 +2907,10 @@ istanbul-reports@^1.0.0:
   dependencies:
     handlebars "^4.0.3"
 
+jacobmarshall-react-inline-svg@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/jacobmarshall-react-inline-svg/-/jacobmarshall-react-inline-svg-2.0.1.tgz#95616c76b58cf276c1ef5c9fb9018d40d3ea7622"
+
 jest-changed-files@^17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/jest-changed-files/-/jest-changed-files-17.0.2.tgz#f5657758736996f590a51b87e5c9369d904ba7b7"
