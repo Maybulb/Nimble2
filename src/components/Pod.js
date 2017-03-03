@@ -5,7 +5,6 @@ const RESULTS_WIDTH = 380 - 32;
 
 function isGenericTitle(title) {
   const normalTitle = String(title).trim().toLowerCase();
-  console.log(normalTitle);
   return (
     normalTitle === 'result' ||
     false
