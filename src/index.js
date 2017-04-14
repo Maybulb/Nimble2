@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import './index.css';
 
-import Search from './components/Search';
-import Theme from './components/Theme';
-import Request from './components/Request';
-import Results from './components/Results';
-import resize from './util/resize';
+import Search from 'components/Search';
+import Theme from 'components/Theme';
+import Request from 'components/Request';
+import Results from 'components/Results';
+import resize from 'util/resize';
 
 class App extends Component {
   state = {

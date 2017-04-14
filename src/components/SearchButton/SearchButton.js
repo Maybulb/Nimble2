@@ -1,5 +1,6 @@
 import React from 'react';
 import classname from 'classname';
+import './SearchButton.css';
 
 function SearchButton({ loading, disabled, onClick }) {
   return (

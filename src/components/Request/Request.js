@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import require from '../util/require';
+import require from 'util/require';
 
 const fetch = require('node-fetch');
 const { stringify } = require('querystring');
@@ -19,35 +19,34 @@ class Request extends Component {
       this.startRequest(nextProps);
     }
   }
-  getRequestUrl(props) {
+  getRequestUrl({ token, query, scale, width }) {
     const params = stringify({
-      appid: props.token,
-      input: props.query,
-      mag: props.scale,
-      width: props.width,
+      appid: token,
+      input: query,
+      mag: scale,
+      width: width * scale,
       output: 'json',
     });
     return `http://api.wolframalpha.com/v2/query?${params}`;
   }
-  request(props) {
-    return fetch(this.getRequestUrl(props))
-      .then(response => response.json())
-      .then(json => json.queryresult);
+  async request(props) {
+    const response = await fetch(this.getRequestUrl(props));
+    const json = await response.json();
+    return json.queryresult;
   }
-  startRequest(props) {
+  async startRequest(props) {
     const { onRequest, onResult } = this.props;
-    const request = this.request(props)
-      .then(result => {
-        console.debug(result);
-        this.setState({ result });
-        onResult && onResult(result);
-      })
-      .catch()
-      .then(() => {
-        this.setState({ pending: false });
-      });
-    onRequest && onRequest(request);
+    const requestP = this.request(props);
+    onRequest && onRequest(requestP);
     this.setState({ pending: true });
+    try {
+      const result = await requestP;
+      console.debug(result);
+      this.setState({ result });
+      onResult && onResult(result);
+    } finally {
+      this.setState({ pending: false });
+    }
   }
   render() {
     const { pending, result } = this.state;
@@ -60,7 +59,7 @@ class Request extends Component {
 
 Request.defaultProps = {
   scale: 2,
-  width: 800,
+  width: 380,
 };
 
 /*
@@ -69,9 +68,9 @@ Request.defaultProps = {
   key=""
   query="Hello World"
   onRequest={() => {}}
-  onResult={() => {}}
+  onResult={result => {}}
   render={result => (
-
+    // Render the response
   )}
 />
 

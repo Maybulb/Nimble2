@@ -1,0 +1,9 @@
+.Pod {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.Pod img {
+  user-select: none;
+  background-color: #f2f2f2;
+}

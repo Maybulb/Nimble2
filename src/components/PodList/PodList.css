@@ -1,0 +1,10 @@
+.PodList {
+  overflow: hidden;
+  padding: 0 16px 0;
+  overflow-y: scroll;
+  max-height: 380px;
+}
+
+.PodList .Pod ~ .Pod:not(:first-of-type) {
+  border-top: 1px solid rgba(0, 0, 0, .25);
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import './Pod.css';
 
 // Panel width - the padding either side
 const RESULTS_WIDTH = 380 - 32;

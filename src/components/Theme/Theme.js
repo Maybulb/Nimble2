@@ -1,6 +1,6 @@
 import React from 'react';
 import Color from 'color';
-import colors from '../assets/colors';
+import colors from 'assets/colors.json';
 
 function Theme({ color }) {
   const primary = colors[color];

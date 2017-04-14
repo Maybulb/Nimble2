@@ -1,0 +1,10 @@
+.Search {
+  position: relative;
+  padding-right: 48px;
+}
+
+.Search .SearchButton {
+  position: absolute;
+  top: 5px;
+  right: 16px;
+}

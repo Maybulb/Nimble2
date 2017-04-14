@@ -1,5 +1,5 @@
 import React from 'react';
-import require from '../util/require';
+import require from 'util/require';
 const { shell } = require('electron');
 
 function ExternalLink({ href, ...props }) {

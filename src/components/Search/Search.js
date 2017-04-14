@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
-import SearchBox from './SearchBox';
-import SearchButton from './SearchButton';
+import SearchBox from 'components/SearchBox';
+import SearchButton from 'components/SearchButton';
+import './Search.css';
 
 function Search({ value, loading, onChange, onSearch }) {
   return (

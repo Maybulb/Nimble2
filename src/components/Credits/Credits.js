@@ -1,6 +1,7 @@
 import React from 'react';
 import InlineSVG from 'jacobmarshall-react-inline-svg';
-import ExternalLink from './ExternalLink';
+import ExternalLink from 'components/ExternalLink';
+import './Credits.css';
 
 function Credits({ url }) {
   return (
@@ -8,7 +9,7 @@ function Credits({ url }) {
       powered by
       <ExternalLink href={url}>
         <InlineSVG
-          src={require('../assets/wolfram-alpha.svg')}
+          src={require('assets/wolfram-alpha.svg')}
         />
       </ExternalLink>
     </div>

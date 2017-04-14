@@ -1,6 +1,7 @@
 import React from 'react';
-import ExternalLink from './ExternalLink';
-import queryUrl from '../util/query-url';
+import ExternalLink from 'components/ExternalLink';
+import queryUrl from 'util/query-url';
+import './Error.css';
 
 function Error({ query }) {
   return (

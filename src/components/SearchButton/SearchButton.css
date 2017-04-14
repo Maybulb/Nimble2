@@ -1,0 +1,42 @@
+.SearchButton {
+  position: relative;
+  overflow: hidden;
+  font-size: 14px;
+  width: 30px;
+  height: 30px;
+  max-height: 30px;
+  border-radius: 100%;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.SearchButton--disabled {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.SearchButton span {
+  position: absolute;
+  top: calc(50% - 8px);
+  left: calc(50% - 6px);
+  transition: transform .25s ease-in-out;
+  pointer-events: none;
+}
+
+.SearchButton span.search {
+  margin-left: -1px;
+}
+
+.SearchButton span:not(.active) {
+  transform: translateY(30px);
+}
+
+.SearchButton .animate-loader {
+  animation: loader 0.75s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+@keyframes loader {
+  from { transform: rotate(0deg) }
+  to { transform: rotate(360deg) }
+}

@@ -1,0 +1,14 @@
+.Error {
+  padding: 30px 0;
+  text-align: center;
+}
+
+.Error__icon {
+  font-size: 70px;
+  margin-bottom: 20px;
+}
+
+.Error p {
+  font-size: 16px;
+  margin: 5px 0;
+}

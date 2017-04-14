@@ -1,0 +1,14 @@
+.Credits {
+  font-size: 14px;
+  text-align: right;
+  color: rgba(255, 255, 255, .8);
+  line-height: 30px;
+}
+
+.Credits svg {
+  float: right;
+  width: 109px;
+  height: 18px;
+  opacity: .8;
+  margin: 6px 16px 6px 6px;
+}

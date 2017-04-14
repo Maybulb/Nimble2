@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import suggestions from '../assets/suggestions';
+import suggestions from 'assets/suggestions.json';
+import './SearchBox.css';
 
 class SearchBox extends Component {
   state = {
