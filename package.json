@@ -16,13 +16,14 @@
     "react-dom": "^15.4.2"
   },
   "devDependencies": {
+    "concurrently": "^3.4.0",
     "react-scripts": "0.9.3"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "electron": "electron ."
+    "start": "concurrently \"npm run -s watch\" \"npm run -s electron\"",
+    "watch": "NODE_PATH=src/ react-scripts start",
+    "build": "NODE_PATH=src/ react-scripts build",
+    "test": "NODE_PATH=src/ react-scripts test --env=jsdom",
+    "electron": "NODE_ENV=development electron ."
   }
 }
