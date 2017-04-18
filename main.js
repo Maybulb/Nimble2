@@ -7,6 +7,7 @@ const mb = menubar({
   width: 380,
   height: 42,
   minHeight: 42,
+  resizable: false,
 });
 
 mb.on('ready', event => {
