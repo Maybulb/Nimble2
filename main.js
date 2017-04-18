@@ -1,4 +1,5 @@
 const menubar = require('menubar');
+const debug = process.env.NODE_ENV === 'development';
 
 const mb = menubar({
   index: 'http://localhost:3000',
@@ -8,10 +9,15 @@ const mb = menubar({
   height: 42,
   minHeight: 42,
   resizable: false,
+  webPreferences: {
+    devTools: debug,
+  },
 });
 
 mb.on('ready', event => {
-  if (process.env.NODE_ENV === 'development') {
-    mb.window.webContents.openDevTools({ mode: 'detach' });
+  if (debug) {
+    mb.window.webContents.openDevTools({
+      mode: 'detach',
+    });
   }
 });
