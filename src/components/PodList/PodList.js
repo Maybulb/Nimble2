@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Pod from 'components/Pod';
 import './PodList.css';
 
@@ -22,5 +23,9 @@ function PodList({ pods }) {
     </div>
   );
 }
+
+PodList.propTypes = {
+  pods: PropTypes.array.isRequired,
+};
 
 export default PodList;

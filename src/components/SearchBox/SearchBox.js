@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import suggestions from 'assets/suggestions.json';
 import './SearchBox.css';
 
@@ -46,5 +47,13 @@ class SearchBox extends Component {
     );
   }
 }
+
+SearchBox.propTypes = {
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.any,
+  ]),
+  onChange: PropTypes.func.isRequired,
+};
 
 export default SearchBox;

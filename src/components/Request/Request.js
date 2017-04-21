@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 import require from 'util/require';
 
 const fetch = require('node-fetch');
@@ -62,10 +63,23 @@ Request.defaultProps = {
   width: 380,
 };
 
+Request.propTypes = {
+  token: PropTypes.string.isRequired,
+  query: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.any,
+  ]),
+  scale: PropTypes.number,
+  width: PropTypes.number,
+  onRequest: PropTypes.func,
+  onResult: PropTypes.func,
+  render: PropTypes.func.isRequired,
+};
+
 /*
 
 <Request
-  key=""
+  token=""
   query="Hello World"
   onRequest={() => {}}
   onResult={result => {}}

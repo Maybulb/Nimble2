@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Color from 'color';
 import colors from 'assets/colors.json';
 
@@ -23,5 +24,9 @@ function Theme({ color }) {
     `}</style>
   );
 }
+
+Theme.propTypes = {
+  color: PropTypes.oneOf(Object.keys(colors)),
+};
 
 export default Theme;

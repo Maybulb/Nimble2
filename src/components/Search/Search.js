@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import SearchBox from 'components/SearchBox';
 import SearchButton from 'components/SearchButton';
 import './Search.css';

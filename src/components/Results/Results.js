@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Error from 'components/Error';
 import Credits from 'components/Credits';
 import PodList from 'components/PodList';
@@ -17,5 +18,12 @@ function Results({ query, error, numpods, pods }) {
     </div>
   );
 }
+
+Results.propTypes = {
+  query: PropTypes.string.isRequired,
+  error: PropTypes.bool.isRequired,
+  numpods: PropTypes.number.isRequired,
+  pods: PropTypes.array,
+};
 
 export default Results;

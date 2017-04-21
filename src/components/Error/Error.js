@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ExternalLink from 'components/ExternalLink';
 import queryUrl from 'util/query-url';
 import './Error.css';
@@ -17,5 +18,9 @@ function Error({ query }) {
     </div>
   );
 }
+
+Error.propTypes = {
+  query: PropTypes.string.isRequired,
+};
 
 export default Error;

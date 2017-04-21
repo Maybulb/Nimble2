@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Interpretation.css';
 
 function getText(pods) {
@@ -23,5 +24,9 @@ function Interpretation({ pods }) {
     </div>
   );
 }
+
+Interpretation.propTypes = {
+  pods: PropTypes.array.isRequired, // Array<WAPod>
+};
 
 export default Interpretation;

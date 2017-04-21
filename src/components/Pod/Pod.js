@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Pod.css';
 
 // Panel width - the padding either side
@@ -48,5 +49,11 @@ function Pod({ data, index, length }) {
     </div>
   );
 }
+
+Pod.propTypes = {
+  data: PropTypes.object.isRequired,
+  index: PropTypes.number.isRequired,
+  length: PropTypes.number.isRequired,
+};
 
 export default Pod;

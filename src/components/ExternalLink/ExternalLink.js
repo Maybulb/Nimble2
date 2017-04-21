@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import require from 'util/require';
 const { shell } = require('electron');
 
@@ -13,5 +14,9 @@ function ExternalLink({ href, ...props }) {
     />
   );
 }
+
+ExternalLink.propTypes = {
+  href: PropTypes.string.isRequired,
+};
 
 export default ExternalLink;

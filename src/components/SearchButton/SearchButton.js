@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classname from 'classname';
 import './SearchButton.css';
 
@@ -20,5 +21,11 @@ function SearchButton({ loading, disabled, onClick }) {
     </button>
   );
 }
+
+SearchButton.propTypes = {
+  loading: PropTypes.bool.isRequired,
+  disabled: PropTypes.bool,
+  onClick: PropTypes.func,
+};
 
 export default SearchButton;
