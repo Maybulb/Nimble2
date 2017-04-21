@@ -7,6 +7,7 @@
     "classname": "^0.0.0",
     "color": "^1.0.3",
     "electron": "^1.4.15",
+    "electron-settings": "^3.0.14",
     "font-awesome": "^4.7.0",
     "jacobmarshall-react-inline-svg": "^2.0.1",
     "menubar": "^5.2.3",
