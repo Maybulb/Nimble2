@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import EventListener from '../EventListener';
 import suggestions from 'assets/suggestions.json';
 import './SearchBox.css';
 
@@ -40,11 +41,15 @@ class SearchBox extends Component {
   render() {
     return (
       <div className="SearchBox">
+        <EventListener
+          global
+          name="keydown"
+          handler={this.handleKeyDown}
+        />
         <input
           ref={ref => (this.input = ref)}
           value={this.props.value}
           placeholder={this.getSuggestion()}
-          onKeyDown={this.handleKeyDown}
           onChange={event => this.handleChange(event.target.value)}
           autoFocus
         />
