@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import './index.css';
 
 import Search from 'components/Search';
+import EventListener from 'components/EventListener';
 import Theme from 'components/Theme';
 import Request from 'components/Request';
 import Results from 'components/Results';
@@ -27,7 +28,13 @@ class App extends Component {
     return (
       <div>
         <Theme color="red" />
+        <EventListener
+          global
+          name="keydown focus"
+          handler={() => this.refs.search.focus()}
+        />
         <Search
+          ref="search"
           value={this.state.search}
           loading={this.state.loading}
           onChange={search => this.setState({ search })}

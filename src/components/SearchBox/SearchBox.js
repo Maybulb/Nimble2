@@ -34,14 +34,19 @@ class SearchBox extends Component {
   handleChange(value) {
     this.props.onChange(value);
   }
+  focus() {
+    this.input.focus();
+  }
   render() {
     return (
       <div className="SearchBox">
         <input
+          ref={ref => (this.input = ref)}
           value={this.props.value}
           placeholder={this.getSuggestion()}
           onKeyDown={this.handleKeyDown}
           onChange={event => this.handleChange(event.target.value)}
+          autoFocus
         />
       </div>
     );
