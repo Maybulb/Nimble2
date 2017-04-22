@@ -1,0 +1,36 @@
+.ThemeSetting {
+  margin-bottom: 10px;
+}
+
+.ThemeSetting__option {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  margin-top: 6px;
+  border: inset 1px rgba(0, 0, 0, .2);
+  transition: transform .2s ease-in-out,
+              box-shadow .2s ease-in-out;
+}
+
+.ThemeSetting__option:active {
+  transform: scale(.8);
+}
+
+.ThemeSetting__option:active:before {
+  position: absolute;
+  content: ' ';
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+}
+
+.ThemeSetting__option + .ThemeSetting__option {
+  margin-left: 6px;
+}
+
+.ThemeSetting__option:not(.ThemeSetting__option--selected) {
+  box-shadow: none !important;
+}

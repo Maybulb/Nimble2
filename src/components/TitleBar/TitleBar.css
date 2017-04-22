@@ -1,0 +1,31 @@
+.TitleBar {
+  display: block;
+  height: 42px;
+}
+
+.TitleBar__left,
+.TitleBar__right {
+  min-height: 1px;
+  width: 60px;
+}
+
+.TitleBar__left {
+  float: left;
+}
+
+.TitleBar__right {
+  float: right;
+}
+
+.TitleBar__title {
+  display: block;
+  line-height: 42px;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  color: #fff;
+}
+
+.TitleBar .IconButton {
+  margin: 6px 16px;
+}

@@ -1,0 +1,36 @@
+/*
+.TickBox {
+  position: relative;
+  display: inline-block;
+}
+
+.TickBox:before {
+  position: absolute;
+  content: ' ';
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+}
+*/
+
+.TickBox .fa-stack {
+  font-size: 13px;
+}
+
+.TickBox .fa-check {
+  transition: transform .2s ease-in-out;
+}
+
+.TickBox:not(.TickBox--selected) .fa-check {
+  transform: scale(0);
+}
+
+.TickBox__input {
+  visibility: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  opacity: 0;
+}

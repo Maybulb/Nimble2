@@ -10,9 +10,13 @@ function Theme({ color }) {
     <style>{`
       .primary {
         background-color: ${primary};
+        transition: background-color .5s ease-in-out;
       }
       .highlight {
         background-color: ${highlight};
+      }
+      .primary-color {
+        transition: color .5s ease-in-out;
       }
       a,
       .primary-color {

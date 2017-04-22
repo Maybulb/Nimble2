@@ -1,9 +1,9 @@
-.Search {
+.SearchForm {
   position: relative;
   padding-right: 48px;
 }
 
-.Search .SearchButton {
+.SearchForm .SearchButton {
   position: absolute;
   top: 5px;
   right: 16px;

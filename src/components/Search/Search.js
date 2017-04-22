@@ -1,42 +1,62 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import SearchBox from 'components/SearchBox';
-import SearchButton from 'components/SearchButton';
-import './Search.css';
+import SearchForm from 'components/SearchForm';
+import EventListener from 'components/EventListener';
+import Theme from 'components/Theme';
+import Request from 'components/Request';
+import Results from 'components/Results';
 
 class Search extends Component {
-  focus() {
-    this.searchBox.focus();
+  state = {
+    query: '',
+    search: '',
+    loading: false,
+  };
+  search = query => {
+    this.setState({ query });
+  }
+  handleSearch = loading => {
+    return () => {
+      this.setState({ loading });
+      this.props.updateDimensions();
+    };
   }
   render() {
-    const { value, loading, onChange, onSearch } = this.props;
+    const { settings } = this.props;
     return (
-      <form
-        onSubmit={event => {
-          event.preventDefault();
-          onSearch && onSearch(value);
-        }}
-        className="Search primary"
-      >
-        <SearchBox
-          ref={ref => (this.searchBox = ref)}
-          value={value}
-          onChange={onChange}
+      <div>
+        <button onClick={() => this.props.switchPage('settings')}>
+          Test
+        </button>
+        <Theme
+          color={settings.theme}
         />
-        <SearchButton
-          loading={loading}
-          disabled={!value}
+        <EventListener
+          global
+          name="keydown focus"
+          handler={() => this.searchForm.focus()}
         />
-      </form>
+        <SearchForm
+          ref={ref => (this.searchForm = ref)}
+          value={this.state.search}
+          loading={this.state.loading}
+          onChange={search => this.setState({ search })}
+          onSubmit={this.search}
+        />
+        <Request
+          token={process.env.REACT_APP_WOLFRAM_ALPHA_API_KEY}
+          query={this.state.query}
+          onRequest={this.handleSearch(true)}
+          onResult={this.handleSearch(false)}
+          render={results => (
+            <Results
+              query={this.state.query}
+              {...results}
+            />
+          )}
+        />
+      </div>
     );
   }
 }
-
-Search.propTypes = {
-  value: PropTypes.string.isRequired,
-  loading: PropTypes.bool.isRequired,
-  onChange: PropTypes.func.isRequired,
-  onSearch: PropTypes.func.isRequired,
-};
 
 export default Search;

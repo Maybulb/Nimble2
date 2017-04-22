@@ -4,7 +4,14 @@ const window = require('electron').remote.getCurrentWindow();
 const element = document.querySelector('#root');
 const MAX_HEIGHT = 600;
 
-export default () => {
-  const height = Math.min(element.clientHeight, MAX_HEIGHT);
+const resize = () => {
+  const height = Math.min(element.scrollHeight, MAX_HEIGHT);
+  // console.debug('resizing window', height);
   window.setSize(380, height, true);
+};
+
+export default resize;
+
+export function next() {
+  setTimeout(resize);
 };

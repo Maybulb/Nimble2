@@ -1,0 +1,19 @@
+.IconButton {
+  overflow: hidden;
+  font-size: 14px;
+  width: 30px;
+  height: 30px;
+  max-height: 30px;
+  border-radius: 100%;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.SearchButton--disabled {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.IconButton .fa {
+  margin-left: -1px;
+}

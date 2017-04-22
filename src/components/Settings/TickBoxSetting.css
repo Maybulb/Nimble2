@@ -1,0 +1,29 @@
+.TickBoxSetting {
+  position: relative;
+  display: block;
+  padding-left: 32px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  transition: transform .2s ease-in-out;
+}
+
+.TickBoxSetting:active {
+  transform: scale(.92);
+}
+
+.TickBoxSetting .TickBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.TickBoxSetting__title {
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 5px;
+}
+
+.TickBoxSetting__description {
+  font-size: 12px;
+  color: #444;
+}
