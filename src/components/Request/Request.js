@@ -50,11 +50,12 @@ class Request extends Component {
     }
   }
   render() {
+    const { render } = this.props;
     const { pending, result } = this.state;
     if (!pending && result) {
-      return this.props.render(result);
+      return render(result);
     }
-    return null;
+    return render(null);
   }
 }
 

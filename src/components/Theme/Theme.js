@@ -6,17 +6,17 @@ import colors from 'assets/colors.json';
 function Theme({ color }) {
   const primary = colors[color];
   const highlight = Color(primary).lighten(.3).hex();
+  const dark = Color(primary).darken(.1).hex();
   return (
     <style>{`
       .primary {
         background-color: ${primary};
-        transition: background-color .5s ease-in-out;
       }
       .highlight {
         background-color: ${highlight};
       }
-      .primary-color {
-        transition: color .5s ease-in-out;
+      .dark {
+        background-color: ${dark};
       }
       a,
       .primary-color {
@@ -24,6 +24,19 @@ function Theme({ color }) {
       }
       .highlight-color {
         color: ${highlight};
+      }
+      .dark-color {
+        color: ${dark};
+      }
+      .primary,
+      .highlight,
+      .dark {
+        transition: background-color .5s ease-in-out;
+      }
+      .primary-color,
+      .highlight-color,
+      .dark-color {
+        transition: color .5s ease-in-out;
       }
     `}</style>
   );

@@ -4,6 +4,7 @@ import EventListener from 'components/EventListener';
 import Theme from 'components/Theme';
 import Request from 'components/Request';
 import Results from 'components/Results';
+import Credits from 'components/Credits';
 
 class Search extends Component {
   state = {
@@ -21,12 +22,9 @@ class Search extends Component {
     };
   }
   render() {
-    const { settings } = this.props;
+    const { settings, switchPage } = this.props;
     return (
       <div>
-        <button onClick={() => this.props.switchPage('settings')}>
-          Test
-        </button>
         <Theme
           color={settings.theme}
         />
@@ -49,10 +47,18 @@ class Search extends Component {
           onRequest={this.handleSearch(true)}
           onResult={this.handleSearch(false)}
           render={results => (
-            <Results
-              query={this.state.query}
-              {...results}
-            />
+            <div>
+              {results &&
+                <Results
+                  query={this.state.query}
+                  {...results}
+                />
+              }
+              <Credits
+                query={this.state.query}
+                onClickSettings={() => switchPage('settings')}
+              />
+            </div>
           )}
         />
       </div>

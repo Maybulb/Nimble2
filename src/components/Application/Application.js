@@ -28,6 +28,9 @@ class Application extends Component {
     });
     resize.next();
   }
+  componentDidMount() {
+    this.updateDimensions();
+  }
   updateDimensions = () => {
     resize.next();
   }

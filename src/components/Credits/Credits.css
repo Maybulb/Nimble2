@@ -13,3 +13,11 @@
   opacity: .8;
   margin: 4px 16px 4px 6px;
 }
+
+.Credits__settings {
+  float: left;
+  font-size: 16px !important;
+  padding: 5px 5px;
+  margin-left: 11px;
+  cursor: pointer;
+}

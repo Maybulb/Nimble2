@@ -2,13 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import InlineSVG from 'jacobmarshall-react-inline-svg';
 import ExternalLink from 'components/ExternalLink';
+import queryUrl from 'util/query-url';
 import './Credits.css';
 
-function Credits({ url }) {
+function Credits({ query, onClickSettings }) {
   return (
-    <div className="Credits primary">
+    <div className="Credits dark">
+      <span
+        className="Credits__settings fa fa-cog"
+        onClick={onClickSettings}
+      />
       powered by
-      <ExternalLink href={url}>
+      <ExternalLink href={queryUrl(query)}>
         <InlineSVG
           src={require('assets/wolfram-alpha.svg')}
         />
@@ -18,7 +23,8 @@ function Credits({ url }) {
 }
 
 Credits.propTypes = {
-  url: PropTypes.string.isRequired,
+  query: PropTypes.string.isRequired,
+  onClickSettings: PropTypes.func.isRequired,
 };
 
 export default Credits;
