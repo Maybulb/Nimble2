@@ -19,7 +19,7 @@ const generalSettings = [
   {
     id: 'suggestions',
     title: 'Show random suggestions',
-    description: 'When enabled, Nimble will provide you will a selection of random search suggestions.',
+    description: 'When enabled, Nimble will provide you with a selection of random search suggestions.',
   },
   {
     id: 'center',
