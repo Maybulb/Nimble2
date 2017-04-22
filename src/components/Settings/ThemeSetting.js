@@ -8,6 +8,7 @@ function ThemeSetting({ color, onChange }) {
     <div className="ThemeSetting">
       {Object.keys(colors).map(name => (
         <div
+          key={name}
           className={classname('ThemeSetting__option', {
             'ThemeSetting__option--selected': name === color,
           })}
