@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import EventListener from '../EventListener';
+import Interval from 'components/Timer/Interval';
 import suggestions from 'assets/suggestions.json';
 import './SearchBox.css';
 
@@ -9,7 +10,6 @@ class SearchBox extends Component {
     suggestion: 0,
   };
   componentDidMount() {
-    setInterval(this.pickRandomSuggestion, 1e4);
     this.pickRandomSuggestion();
   }
   pickRandomSuggestion = () => {
@@ -46,6 +46,10 @@ class SearchBox extends Component {
           global
           name="keydown"
           handler={this.handleKeyDown}
+        />
+        <Interval
+          handler={this.pickRandomSuggestion}
+          ms={1e4}
         />
         <input
           ref={ref => (this.input = ref)}
