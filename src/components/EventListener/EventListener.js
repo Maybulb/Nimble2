@@ -26,7 +26,7 @@ class EventListener extends Component {
     // Unregister the previous event listener (if one exists)
     this.unregisterEventListener();
 
-    const { global, handler } = this.props;
+    const { global } = this.props;
     if (global) {
       this.target = window;
     } else {
@@ -35,7 +35,7 @@ class EventListener extends Component {
     if (this.target) {
       // Only register the event listener if there *is* a target
       this.getEventNames().forEach(name => {
-        this.target.addEventListener(name, handler);
+        this.target.addEventListener(name, this._handler);
       });
     }
   }
@@ -43,9 +43,13 @@ class EventListener extends Component {
   unregisterEventListener() {
     if (this.target) {
       this.getEventNames().forEach(name => {
-        this.target.removeEventListener(name, this.props.handler);
+        this.target.removeEventListener(name, this._handler);
       });
     }
+  }
+
+  _handler = (event) => {
+    return this.props.handler(event);
   }
 
   render() {
