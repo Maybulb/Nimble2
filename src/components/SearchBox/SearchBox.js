@@ -39,6 +39,7 @@ class SearchBox extends Component {
     this.input.focus();
   }
   render() {
+    const { suggestions } = this.props;
     return (
       <div className="SearchBox">
         <EventListener
@@ -49,7 +50,7 @@ class SearchBox extends Component {
         <input
           ref={ref => (this.input = ref)}
           value={this.props.value}
-          placeholder={this.getSuggestion()}
+          placeholder={suggestions ? this.getSuggestion() : null}
           onChange={event => this.handleChange(event.target.value)}
           autoFocus
         />

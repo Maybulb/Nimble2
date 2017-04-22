@@ -17,6 +17,11 @@ const generalSettings = [
     description: 'This uses Math.js, which throws random errors depending on what you\'re doing. If you want pure Wolfram|Alpha, disable this.',
   },
   {
+    id: 'suggestions',
+    title: 'Show random suggestions',
+    description: 'When enabled, Nimble will provide you will a selection of random search suggestions.',
+  },
+  {
     id: 'center',
     title: 'Open Nimble in the center of the screen',
   },

@@ -9,7 +9,7 @@ class SearchForm extends Component {
     this.searchBox.focus();
   }
   render() {
-    const { value, loading, onChange, onSubmit } = this.props;
+    const { value, loading, suggestions, onChange, onSubmit } = this.props;
     return (
       <form
         onSubmit={event => {
@@ -22,6 +22,7 @@ class SearchForm extends Component {
           ref={ref => (this.searchBox = ref)}
           value={value}
           onChange={onChange}
+          suggestions={suggestions}
         />
         <SearchButton
           loading={loading}

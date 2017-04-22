@@ -41,6 +41,7 @@ class Search extends Component {
           loading={this.state.loading}
           onChange={search => this.setState({ search })}
           onSubmit={this.search}
+          suggestions={settings.suggestions}
         />
         <Request
           token={process.env.REACT_APP_WOLFRAM_ALPHA_API_KEY}
