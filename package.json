@@ -4,6 +4,7 @@
   "private": true,
   "main": "main.js",
   "dependencies": {
+    "bugsnag-js": "^3.2.0",
     "classname": "^0.0.0",
     "color": "^1.0.3",
     "electron": "^1.4.15",
