@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import TitleBar from 'components/TitleBar';
 import Theme from 'components/Theme';
 import IconButton from 'components/IconButton';
-import ColorPicker from 'components/ColorPicker';
 import SettingsGroup from './SettingsGroup';
 import TickBoxSetting from './TickBoxSetting';
 import ThemeSetting from './ThemeSetting';
