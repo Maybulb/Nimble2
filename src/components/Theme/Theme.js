@@ -4,7 +4,7 @@ import Color from 'color';
 import colors from 'assets/colors.json';
 
 function Theme({ color }) {
-  const primary = colors[color];
+  const primary = colors[color] || color;
   const highlight = Color(primary).lighten(.3).hex();
   const dark = Color(primary).darken(.1).hex();
   return (
@@ -43,7 +43,10 @@ function Theme({ color }) {
 }
 
 Theme.propTypes = {
-  color: PropTypes.oneOf(Object.keys(colors)),
+  color: PropTypes.oneOfType([
+    PropTypes.oneOf(Object.keys(colors)),
+    PropTypes.any,
+  ]),
 };
 
 export default Theme;

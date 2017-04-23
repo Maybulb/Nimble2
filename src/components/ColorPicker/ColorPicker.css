@@ -1,0 +1,24 @@
+.ColorPicker {
+  display: inline-block;
+}
+
+.ColorPicker input[type="color"] {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.ColorPicker__circle {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  margin-top: 6px;
+  border: inset 1px rgba(0, 0, 0, .2);
+  transition: transform .2s ease-in-out,
+              box-shadow .2s ease-in-out,
+              background-color .2s ease-in-out;
+}

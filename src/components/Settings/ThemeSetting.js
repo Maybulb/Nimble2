@@ -1,9 +1,11 @@
 import React from 'react';
 import classname from 'classname';
+import ColorPicker from 'components/ColorPicker';
 import colors from 'assets/colors.json';
 import './ThemeSetting.css';
 
 function ThemeSetting({ color, onChange }) {
+  const isCustomColor = Object.keys(colors).indexOf(color) === -1;
   return (
     <div className="ThemeSetting">
       {Object.keys(colors).map(name => (
@@ -23,6 +25,11 @@ function ThemeSetting({ color, onChange }) {
           }}
         />
       ))}
+      <ColorPicker
+        color={isCustomColor ? color : '#fff'}
+        selected={isCustomColor}
+        onChange={onChange}
+      />
     </div>
   );
 }

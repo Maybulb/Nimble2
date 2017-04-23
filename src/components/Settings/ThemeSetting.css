@@ -27,7 +27,8 @@
   bottom: -5px;
 }
 
-.ThemeSetting__option + .ThemeSetting__option {
+.ThemeSetting__option + .ThemeSetting__option,
+.ThemeSetting .ColorPicker {
   margin-left: 8px;
 }
 
