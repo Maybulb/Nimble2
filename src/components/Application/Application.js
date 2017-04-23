@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import Search from 'components/Search';
 import Settings from 'components/Settings';
 import * as resize from 'util/resize';
-import settings from 'util/settings';
+import settings, {
+  setup as setupSetting,
+  reset as resetSettings,
+} from 'util/settings';
 
 class Application extends Component {
   state = {
@@ -36,6 +39,11 @@ class Application extends Component {
   }
   changeSetting = (name, value) => {
     settings.set(name, value);
+    setupSetting(name);
+    this.forceUpdate();
+  }
+  resetSettings = () => {
+    resetSettings();
     this.forceUpdate();
   }
   render() {
@@ -46,6 +54,7 @@ class Application extends Component {
         switchPage={this.switchPage}
         updateDimensions={this.updateDimensions}
         changeSetting={this.changeSetting}
+        resetSettings={this.resetSettings}
         {...this.state.props}
       />
     );

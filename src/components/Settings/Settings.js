@@ -10,7 +10,7 @@ const generalSettings = [
   {
     id: 'startup',
     title: 'Open Nimble on startup',
-    supported: false,
+    supported: true,
   },
   {
     id: 'basicMath',
