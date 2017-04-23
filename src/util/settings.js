@@ -11,10 +11,15 @@ const defaultSettings = {
   theme: 'red',
 };
 
-Object.keys(defaultSettings).forEach(name => {
-  if (!settings.has(name)) {
-    settings.set(name, defaultSettings[name]);
-  }
-});
+function reset(override = true) {
+  Object.keys(defaultSettings).forEach(name => {
+    if (override || !settings.has(name)) {
+      settings.set(name, defaultSettings[name]);
+    }
+  });
+}
+
+reset(false);
 
 export default settings;
+export { reset };
