@@ -5,7 +5,7 @@ const settings = require('electron-settings');
 const defaultSettings = {
   startup: true,
   center: false,
-  reportErrors: false,
+  reportErrors: true,
   autoUpdate: true,
   suggestions: true,
   basicMath: true,
