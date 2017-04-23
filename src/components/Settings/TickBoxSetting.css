@@ -11,6 +11,11 @@
   transform: scale(.92);
 }
 
+.TickBoxSetting--disabled {
+  opacity: .5;
+  pointer-events: none;
+}
+
 .TickBoxSetting .TickBox {
   position: absolute;
   top: 0;

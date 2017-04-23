@@ -1,10 +1,13 @@
 import React from 'react';
+import classname from 'classname';
 import TickBox from 'components/TickBox';
 import './TickBoxSetting.css';
 
-function TickBoxSetting({ selected, title, description, onChange }) {
+function TickBoxSetting({ selected, disabled, title, description, onChange }) {
   return (
-    <label className="TickBoxSetting">
+    <label className={classname('TickBoxSetting', {
+      'TickBoxSetting--disabled': disabled,
+    })}>
       <TickBox
         selected={selected}
         onChange={onChange}
