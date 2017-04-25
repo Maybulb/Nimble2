@@ -21,8 +21,8 @@ function shouldDisplayTitle(title, index, length) {
 }
 
 function getImageDimensions(image) {
-  let width = image.width / 2;
-  let height = image.height / 2;
+  let width = image.width / image.scale;
+  let height = image.height / image.scale;
   if (width > RESULTS_WIDTH) {
     height *= RESULTS_WIDTH / width;
     width = RESULTS_WIDTH;

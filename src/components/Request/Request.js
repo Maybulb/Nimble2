@@ -33,7 +33,20 @@ class Request extends Component {
   async request(props) {
     const response = await fetch(this.getRequestUrl(props));
     const json = await response.json();
-    return json.queryresult;
+    const result = this.transformResult(json.queryresult);
+    console.debug(result);
+    return result;
+  }
+  transformResult(result) {
+    const clone = JSON.parse(JSON.stringify(result)); // The original object is from Node.js, so dev tools does some funnies by making every property a getter/setter
+    clone.pods.forEach(pod => {
+      pod.subpods.forEach(subpod => {
+        if (subpod.img) {
+          subpod.img.scale = this.props.scale;
+        }
+      });
+    });
+    return clone;
   }
   async startRequest(props) {
     const { onRequest, onResult } = this.props;
@@ -42,7 +55,6 @@ class Request extends Component {
     this.setState({ pending: true });
     try {
       const result = await requestP;
-      console.debug(result);
       this.setState({ result });
       onResult && onResult(result);
     } finally {
@@ -60,7 +72,7 @@ class Request extends Component {
 }
 
 Request.defaultProps = {
-  scale: 2,
+  scale: window.devicePixelRatio,
   width: 380,
 };
 
