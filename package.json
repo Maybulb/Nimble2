@@ -46,7 +46,7 @@
     "dmg": {
       "title": "Nimble",
       "icon": "src/assets/app/nimble.icns",
-      "icon-size": 80,
+      "iconSize": 80,
       "background": "src/assets/app/background.png",
       "contents": [
         {
