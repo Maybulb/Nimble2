@@ -32,5 +32,10 @@
     "build": "NODE_PATH=src/ react-scripts build",
     "test": "NODE_PATH=src/ react-scripts test --env=jsdom",
     "electron": "NODE_ENV=development electron ."
+  },
+  "author": {
+    "name": "Maybulb",
+    "email": "team@maybulb.com",
+    "url": "https://maybulb.com"
   }
 }
