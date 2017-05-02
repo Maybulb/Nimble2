@@ -26,7 +26,11 @@ Once you have cloned the repository, you will need to setup your own local .env 
 
 You can start by copying the `sample.env` file to `.env` (`cp sample.env .env`). Then you will need to locate your Wolfram|Alpha® API key and add it to the `.env` file.
 
-Next you will need to install the dependencies necessary to develop & run Nimble. If you went ahead and installed yarn, this process should be relatively quick (`yarn install`). You can also use npm to install the dependencies, but don't expect it to be anywhere near as fast (`npm install`).
+Next you will need to install the dependencies necessary to develop & run Nimble. If you went ahead and installed yarn, this process should be relatively quick. (You can also use npm to install the dependencies, but don't expect it to be anywhere near as fast - `npm install`.)
+
+```sh
+$ yarn install
+```
 
 Once ready, you can boot up the app in dev mode. This consists of two main tasks; Create React App (CRA), and the Electron process. Please note: CRA automatically opens up a browser window pointed to the app, however because Nimble only works as a desktop app, just close the browser window.
 
