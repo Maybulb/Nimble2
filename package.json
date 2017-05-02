@@ -27,11 +27,13 @@
     "react-scripts": "0.9.3"
   },
   "scripts": {
+    "clean": "rm -rf ./{bundle,dist}",
     "start": "concurrently \"npm run -s watch\" \"npm run -s electron\"",
     "watch": "NODE_PATH=src/ react-scripts start",
-    "build": "NODE_PATH=src/ react-scripts build",
+    "build": "NODE_PATH=src/ react-scripts build && mv build bundle",
     "test": "NODE_PATH=src/ react-scripts test --env=jsdom",
-    "electron": "NODE_ENV=development electron ."
+    "electron": "NODE_ENV=development electron .",
+    "build:mac": "npm run -s build && build --mac"
   },
   "author": {
     "name": "Maybulb",
@@ -39,6 +41,7 @@
     "url": "https://maybulb.com"
   },
   "build": {
+    "appId": "com.maybulb.nimble",
     "mac": {
       "target": "default",
       "icon": "src/assets/app/nimble.icns"
@@ -62,5 +65,6 @@
         }
       ]
     }
-  }
+  },
+  "homepage": "./"
 }

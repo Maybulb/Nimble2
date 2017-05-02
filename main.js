@@ -1,15 +1,10 @@
 const menubar = require('menubar');
-const path = require('path');
 const dev = require('electron-is-dev');
 
-const index = (
-  dev
-    ? 'http://localhost:3000'
-    : path.join(__dirname, 'build/index.html')
-);
-
 const mb = menubar({
-  index,
+  index: dev
+    ? 'http://localhost:3000'
+    : `file://${__dirname}/bundle/index.html`,
   icon: __dirname + '/src/assets/menubar/menubar_iconTemplate.png',
   preloadWindow: true,
   width: 380,
