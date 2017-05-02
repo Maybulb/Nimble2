@@ -66,8 +66,5 @@
       ]
     }
   },
-  "homepage": "./",
-  "directories": {
-    "output": "dist"
-  }
+  "homepage": "./"
 }
