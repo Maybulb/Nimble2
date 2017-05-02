@@ -1,4 +1,5 @@
 const menubar = require('menubar');
+const path = require('path');
 const dev = require('electron-is-dev');
 
 const index = (
