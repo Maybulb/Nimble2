@@ -33,7 +33,7 @@
     "build": "NODE_PATH=src/ react-scripts build && mv build bundle",
     "test": "NODE_PATH=src/ react-scripts test --env=jsdom",
     "electron": "NODE_ENV=development electron .",
-    "build:mac": "npm run -s build && build --mac"
+    "dist": "npm run -s build && build --publish onTagOrDraft"
   },
   "author": {
     "name": "Maybulb",
@@ -66,5 +66,8 @@
       ]
     }
   },
-  "homepage": "./"
+  "homepage": "./",
+  "directories": {
+    "output": "dist"
+  }
 }
