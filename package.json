@@ -6,7 +6,6 @@
   "main": "main.js",
   "dependencies": {
     "auto-launch": "^5.0.1",
-    "electron-builder": "^17.1.1",
     "electron-is-dev": "^0.1.2",
     "electron-settings": "^3.0.14",
     "menubar": "^5.2.3",
@@ -18,6 +17,7 @@
     "color": "^1.0.3",
     "concurrently": "^3.4.0",
     "electron": "^1.4.15",
+    "electron-builder": "^17.1.1",
     "font-awesome": "^4.7.0",
     "jacobmarshall-react-inline-svg": "^2.0.1",
     "normalize.css": "^5.0.0",
