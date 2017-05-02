@@ -1,6 +1,4 @@
-# <img src="http://i.imgur.com/GOOa67f.png" width="80%">
-
-[![Build Status](https://travis-ci.org/Maybulb/Nimble2.svg?branch=master)](https://travis-ci.org/Maybulb/Nimble2) [![dependencies Status](https://david-dm.org/Maybulb/Nimble2/status.svg)](https://david-dm.org/Maybulb/Nimble2)
+## Nimble [![Build Status](https://travis-ci.org/Maybulb/Nimble2.svg?branch=master)](https://travis-ci.org/Maybulb/Nimble2) [![Dependencies Status](https://david-dm.org/Maybulb/Nimble2/status.svg)](https://david-dm.org/Maybulb/Nimble2)
 
 A whole new Nimble.
 
