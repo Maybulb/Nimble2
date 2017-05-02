@@ -1,27 +1,29 @@
 {
   "name": "Nimble",
   "version": "2.0.0",
+  "description": "A Wolfram|Alpha® menu bar app",
   "private": true,
   "main": "main.js",
   "dependencies": {
     "auto-launch": "^5.0.1",
+    "electron-builder": "^17.1.1",
+    "electron-is-dev": "^0.1.2",
+    "electron-settings": "^3.0.14",
+    "menubar": "^5.2.3",
+    "node-fetch": "^1.6.3"
+  },
+  "devDependencies": {
     "bugsnag-js": "^3.2.0",
     "classname": "^0.0.0",
     "color": "^1.0.3",
+    "concurrently": "^3.4.0",
     "electron": "^1.4.15",
-    "electron-is-dev": "^0.1.2",
-    "electron-settings": "^3.0.14",
     "font-awesome": "^4.7.0",
     "jacobmarshall-react-inline-svg": "^2.0.1",
-    "menubar": "^5.2.3",
-    "node-fetch": "^1.6.3",
     "normalize.css": "^5.0.0",
     "prop-types": "^15.5.8",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
-  },
-  "devDependencies": {
-    "concurrently": "^3.4.0",
+    "react-dom": "^15.4.2",
     "react-scripts": "0.9.3"
   },
   "scripts": {
