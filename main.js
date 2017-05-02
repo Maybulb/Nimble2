@@ -1,8 +1,14 @@
 const menubar = require('menubar');
-const debug = process.env.NODE_ENV === 'development';
+const dev = require('electron-is-dev');
+
+const index = (
+  dev
+    ? 'http://localhost:3000'
+    : path.join(__dirname, 'build/index.html')
+);
 
 const mb = menubar({
-  index: 'http://localhost:3000',
+  index,
   icon: __dirname + '/src/assets/menubar/menubar_iconTemplate.png',
   preloadWindow: true,
   width: 380,
@@ -10,12 +16,12 @@ const mb = menubar({
   minHeight: 42,
   resizable: false,
   webPreferences: {
-    devTools: debug,
+    devTools: dev,
   },
 });
 
 mb.on('ready', event => {
-  if (debug) {
+  if (dev) {
     mb.window.webContents.openDevTools({
       mode: 'detach',
     });
