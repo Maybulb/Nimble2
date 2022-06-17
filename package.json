@@ -16,7 +16,7 @@
     "classname": "^0.0.0",
     "color": "^1.0.3",
     "concurrently": "^3.4.0",
-    "electron": "^1.4.15",
+    "electron": "^15.5.5",
     "electron-builder": "^17.1.1",
     "font-awesome": "^4.7.0",
     "jacobmarshall-react-inline-svg": "^2.0.1",
